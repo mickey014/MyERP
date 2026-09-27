@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Data/">
+    <Project Path="MyERP.Data/MyERP.Data.csproj" Id="59b0cc94-4d62-4c25-b941-00df1a31b80a" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="MyERP.Domain/MyERP.Domain.csproj" Id="179de5f5-60e5-4e31-b09e-681ba6a26222" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="MyERP.Infrastructure/MyERP.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="MyERP.Web/MyERP.Web.csproj" />
+  </Folder>
+</Solution>
