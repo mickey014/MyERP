@@ -1,0 +1,42 @@
+﻿@model MyERP.Web.ViewModels.Modules.ModuleCardViewModel
+
+<div class="col-12 col-md-6 col-lg-6">
+    <div class="module-card module-card--@Model.ColorTheme@(Model.IsEnabled ? "" : " module-card--disabled") h-100">
+
+        @if (!string.IsNullOrEmpty(Model.Badge))
+        {
+            <span class="module-card__badge">@Model.Badge</span>
+        }
+
+        <div class="module-card__icon">
+            <i class="@Model.Icon" aria-hidden="true"></i>
+        </div>
+
+        <h2 class="module-card__title">@Model.Title</h2>
+        <p class="module-card__description">@Model.Description</p>
+
+        @if (Model.Features.Any())
+        {
+            <ul class="module-card__features">
+                @foreach (var feature in Model.Features)
+                {
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>@feature</li>
+                }
+            </ul>
+        }
+
+        <div class="module-card__footer">
+            @if (Model.IsEnabled)
+            {
+                <a href="@Model.Url" class="module-card__btn">
+                    @Model.ButtonText
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            }
+            else
+            {
+                <button type="button" class="module-card__btn" disabled>@Model.ButtonText</button>
+            }
+        </div>
+    </div>
+</div>

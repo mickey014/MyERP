@@ -1,4 +1,14 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// MyERP — shared client-side behavior.
+(function () {
+    'use strict';
 
-// Write your JavaScript code.
+    // Enable Bootstrap dropdowns/tooltips app-wide if present.
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipEls = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltipEls.forEach(function (el) {
+            if (window.bootstrap && window.bootstrap.Tooltip) {
+                new window.bootstrap.Tooltip(el);
+            }
+        });
+    });
+})();

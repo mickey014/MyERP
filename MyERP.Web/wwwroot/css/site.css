@@ -1,31 +1,88 @@
-html {
-  font-size: 14px;
+/* ==========================================================================
+   Palette rationale: a cool, neutral workspace background (not the
+   generic Bootstrap white or a warm "AI-cream") with a near-black
+   ink used sparingly for the navbar/footer only. Each module owns a
+   distinct accent — a confident blue for POS (transactions, trust),
+   a teal-green for CRM (relationships, growth) — so the accent
+   colors carry meaning instead of decorating.
+
+   Type: Sora for headings (geometric, slightly technical) paired
+   with Inter for body/UI copy (a neutral workhorse built for dense
+   interface text). The two are deliberately distinct in character.
+   ========================================================================== */
+
+:root {
+    /* Ink / neutrals */
+    --erp-ink: #101826;
+    --erp-ink-soft: #1B2438;
+    --erp-bg: #F3F5F8;
+    --erp-surface: #FFFFFF;
+    --erp-border: #E2E6EC;
+    --erp-text: #16202B;
+    --erp-text-muted: #5B6472;
+    --erp-text-faint: #8A93A3;
+    /* Module accents */
+    --erp-pos: #2E5AAC;
+    --erp-pos-dark: #22437E;
+    --erp-pos-tint: #EAF0FB;
+    --erp-crm: #17805F;
+    --erp-crm-dark: #115F46;
+    --erp-crm-tint: #E7F5EF;
+    --erp-muted-accent: #9AA3AF;
+    --erp-muted-tint: #EEF0F3;
+    /* Type */
+    --erp-font-display: "Sora", "Segoe UI", sans-serif;
+    --erp-font-body: "Inter", "Segoe UI", sans-serif;
+    /* Shape */
+    --erp-radius: 14px;
+    --erp-radius-sm: 8px;
+
+
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+* {
+    box-sizing: border-box;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+    height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    background: var(--erp-bg);
+    color: var(--erp-text);
+    font-family: var(--erp-font-body);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--erp-font-display);
+    color: var(--erp-ink);
+    margin: 0;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: var(--erp-font-body);
+}
+
+    /* Visible keyboard focus everywhere */
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+        outline: 2px solid var(--erp-pos);
+        outline-offset: 2px;
+    }
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
 }

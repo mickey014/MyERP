@@ -1,0 +1,169 @@
+﻿
+.modules-page__header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.75rem;
+}
+
+    .modules-page__header h1 {
+        font-size: clamp(1.6rem, 2.4vw, 2.15rem);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .modules-page__header p {
+        color: var(--erp-text-muted);
+        font-size: 1.02rem;
+        margin: 0;
+    }
+
+.modules-page__grid {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* ---- Module card ------------------------------------------------------- */
+
+.module-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--erp-surface);
+    border: 1px solid var(--erp-border);
+    border-radius: var(--erp-radius);
+    padding: 2rem 1.9rem 1.75rem;
+    border-top: 3px solid var(--card-accent, var(--erp-pos));
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+    .module-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 34px rgba(16, 24, 38, 0.1);
+    }
+
+.module-card--primary {
+    --card-accent: var(--erp-pos);
+}
+
+.module-card--success {
+    --card-accent: var(--erp-crm);
+}
+
+.module-card--secondary {
+    --card-accent: var(--erp-muted-accent);
+}
+
+.module-card--disabled {
+    background: var(--erp-muted-tint);
+}
+
+    .module-card--disabled:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+.module-card__badge {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--erp-text-muted);
+    background: #fff;
+    border: 1px solid var(--erp-border);
+    padding: 0.28rem 0.65rem;
+    border-radius: 999px;
+}
+
+.module-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--card-accent, var(--erp-pos)) 12%, white);
+    color: var(--card-accent, var(--erp-pos));
+    font-size: 1.4rem;
+    margin-bottom: 1.15rem;
+}
+
+.module-card--disabled .module-card__icon {
+    background: #fff;
+    color: var(--erp-muted-accent);
+}
+
+.module-card__title {
+    font-size: 1.28rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.module-card__description {
+    color: var(--erp-text-muted);
+    margin-bottom: 1.35rem;
+    max-width: 46ch;
+}
+
+.module-card__features {
+    list-style: none;
+    margin: 0 0 1.6rem;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+    flex: 1;
+}
+
+    .module-card__features li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.92rem;
+        color: var(--erp-text);
+    }
+
+    .module-card__features i {
+        font-size: 0.78rem;
+        color: var(--card-accent, var(--erp-pos));
+        width: 16px;
+        text-align: center;
+    }
+
+.module-card--disabled .module-card__features i {
+    color: var(--erp-muted-accent);
+}
+
+.module-card__footer {
+    margin-top: auto;
+}
+
+.module-card__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--card-accent, var(--erp-pos));
+    color: #fff;
+    border: none;
+    border-radius: var(--erp-radius-sm);
+    padding: 0.65rem 1.3rem;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+    .module-card__btn:hover {
+        filter: brightness(0.92);
+        color: #fff;
+    }
+
+    .module-card__btn:disabled {
+        background: var(--erp-muted-accent);
+        cursor: not-allowed;
+        opacity: 0.75;
+    }
+
+@media (max-width: 767.98px) {
+    .module-card {
+        padding: 1.6rem 1.4rem;
+    }
+}

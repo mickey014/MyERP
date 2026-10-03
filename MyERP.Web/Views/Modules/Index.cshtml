@@ -1,0 +1,20 @@
+﻿@model MyERP.Web.ViewModels.Modules.ModuleDashboardViewModel
+@{
+    ViewData["Title"] = "Modules";
+}
+
+<div class="modules-page">
+    <div class="container-fluid px-4">
+        <div class="modules-page__header">
+            <h1>@Model.WelcomeMessage, @Model.UserDisplayName</h1>
+            <p>Select a module to continue</p>
+        </div>
+
+        <div class="row g-4 modules-page__grid">
+            @foreach( var module in Model.Modules)
+            {
+                <partial name="_ModuleCard" model="module" />
+            }
+        </div>
+    </div>
+</div>

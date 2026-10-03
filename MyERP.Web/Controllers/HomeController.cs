@@ -8,7 +8,7 @@ namespace MyERP.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Modules");
         }
 
         public IActionResult Privacy()

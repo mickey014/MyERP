@@ -1,0 +1,147 @@
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+
+    var isModulesActive =
+        string.Equals(currentController, "Modules", StringComparison.OrdinalIgnoreCase);
+}
+
+<nav class="erp-navbar navbar navbar-expand-lg">
+    <div class="container-fluid px-4">
+
+        <!-- LEFT -->
+        <div class="erp-navbar__left">
+            <a class="erp-navbar__brand"
+               asp-controller="Home"
+               asp-action="Index">
+
+                <span class="erp-navbar__mark">
+                    <i class="fa-solid fa-building-columns"></i>
+                </span>
+
+                <span class="erp-navbar__name">MyERP</span>
+            </a>
+        </div>
+
+
+        <!-- MOBILE TOGGLE -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#erpNav"
+                aria-controls="erpNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!-- MIDDLE -->
+        <div class="collapse navbar-collapse erp-navbar__middle"
+             id="erpNav">
+
+            <ul class="navbar-nav erp-navbar__links">
+
+                <li class="nav-item">
+                    <a class="nav-link @(isModulesActive ? "active" : "")"
+                       asp-controller="Modules"
+                       asp-action="Index">
+
+                        Modules
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-controller="POS"
+                       asp-action="Index">
+
+                        POS
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-controller="CRM"
+                       asp-action="Index">
+
+                        CRM
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!-- RIGHT -->
+        <div class="erp-navbar__right">
+
+            <ul class="navbar-nav align-items-lg-center">
+
+                <!-- Notifications -->
+                <li class="nav-item">
+                    <a class="erp-navbar__icon-btn"
+                       href="#"
+                       title="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+                    </a>
+                </li>
+
+
+                <!-- User -->
+                <li class="nav-item dropdown">
+
+                    <a class="erp-navbar__user dropdown-toggle"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+
+                        <span class="erp-navbar__avatar">
+                            K
+                        </span>
+
+                        <span class="erp-navbar__user-name">
+                            Kirk
+                        </span>
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end erp-navbar__dropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-regular fa-id-card me-2"></i>
+                                My profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-gear me-2"></i>
+                                Settings
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                Sign out
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
