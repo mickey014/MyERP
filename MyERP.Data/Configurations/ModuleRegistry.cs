@@ -1,6 +1,6 @@
 ﻿using MyERP.Domain.Modules;
 
-namespace BusinessERP.Data.Configuration;
+namespace MyERP.Data.Configuration;
 
 public static class ModuleRegistry
 {

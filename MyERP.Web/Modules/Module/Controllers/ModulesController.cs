@@ -1,8 +1,9 @@
-﻿using BusinessERP.Data.Configuration;
+﻿using MyERP.Data.Configuration;
 using Microsoft.AspNetCore.Mvc;
-using MyERP.Web.ViewModels.Modules;
+using MyERP.Web.Modules.Module.ViewModels;
 
-namespace MyERP.Web.Controllers
+
+namespace MyERP.Web.Modules.Module.Controllers
 {
     public class ModulesController : Controller
     {

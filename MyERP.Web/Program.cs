@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MyERP.Data;
+using MyERP.Infrastructure.Razor;
 
 namespace MyERP.Web
 {
@@ -25,7 +26,16 @@ namespace MyERP.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            builder.Services.AddControllersWithViews();
+            // ===========================================
+            // MVC + Razor
+            // ===========================================
+            builder.Services
+            .AddControllersWithViews()
+            .AddRazorOptions(options =>
+            {
+                // Register the custom module view resolver
+                options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
+            });
 
             var app = builder.Build();
 

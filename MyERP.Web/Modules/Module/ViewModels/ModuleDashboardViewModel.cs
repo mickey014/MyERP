@@ -1,4 +1,4 @@
-﻿namespace MyERP.Web.ViewModels.Modules
+﻿namespace MyERP.Web.Modules.Module.ViewModels
 {
     public class ModuleDashboardViewModel
     {

@@ -1,0 +1,93 @@
+﻿<nav class="navbar navbar-expand-lg top-navbar sticky-top">
+    <div class="container px-3">
+        <a class="navbar-brand d-flex align-items-center gap-2" asp-controller="Dashboard" asp-action="Index">
+            <span class="brand-icon"><i class="fa-solid fa-building-columns"></i></span>
+            <span class="brand-text d-none d-sm-inline">Enterprise Admin</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav main-nav-links me-auto">
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Dashboard" ? "active" : "")" asp-controller="Dashboard" asp-action="Index">
+                        <i class="fa-solid fa-gauge-high"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Companies" ? "active" : "")" asp-controller="Companies" asp-action="Index">
+                        <i class="fa-solid fa-building"></i> Companies
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Branches" ? "active" : "")" asp-controller="Branches" asp-action="Index">
+                        <i class="fa-solid fa-code-branch"></i> Branches
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-chart-line"></i> Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+                </li>
+            </ul>
+
+            <!-- Search -->
+            @* <form class="d-none d-lg-flex nav-search me-3" role="search">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input class="form-control" type="search" placeholder="Quick search... (Ctrl+K)" id="globalSearch" />
+            </form> *@
+
+            <ul class="navbar-nav ms-lg-auto align-items-center flex-row gap-2">
+                <!-- Dark mode -->
+                <li class="nav-item">
+                    <button class="btn nav-icon-btn" id="themeToggle" title="Toggle dark mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+
+                <!-- Notifications -->
+                <li class="nav-item dropdown">
+                    <button class="btn nav-icon-btn position-relative" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge-dot">3</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end notif-dropdown p-0">
+                        <div class="dropdown-header-custom">Notifications <span class="text-muted small">3 new</span></div>
+                        <a class="dropdown-item notif-item" href="#">
+                            <i class="fa-solid fa-building text-primary"></i>
+                            <div><strong>New company added</strong><div class="small text-muted">Wayne Consulting was created</div></div>
+                        </a>
+                        <a class="dropdown-item notif-item" href="#">
+                            <i class="fa-solid fa-code-branch text-success"></i>
+                            <div><strong>Branch updated</strong><div class="small text-muted">Austin Office status changed</div></div>
+                        </a>
+                        <a class="dropdown-item notif-item" href="#">
+                            <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+                            <div><strong>Inactive company</strong><div class="small text-muted">Umbrella Logistics needs review</div></div>
+                        </a>
+                        <a class="dropdown-item text-center small py-2" href="#">View all notifications</a>
+                    </div>
+                </li>
+
+                <!-- Profile -->
+                <li class="nav-item dropdown">
+                    <button class="btn nav-profile-btn d-flex align-items-center gap-2" data-bs-toggle="dropdown">
+                        <span class="avatar-circle">A</span>
+                        @* <span class="d-none d-xl-inline">Admin User</span> *@
+                        <i class="fa-solid fa-chevron-down small"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><h6 class="dropdown-header">Admin User</h6></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>My Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear me-2"></i>Preferences</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
