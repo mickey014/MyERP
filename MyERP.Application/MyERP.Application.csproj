@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyERP.Domain\MyERP.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

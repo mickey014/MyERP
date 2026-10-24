@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Application/">
+    <Project Path="MyERP.Application/MyERP.Application.csproj" Id="ad5e3d76-0db7-4469-8dd2-97ec050cd0f4" />
+  </Folder>
   <Folder Name="/Data/">
     <Project Path="MyERP.Data/MyERP.Data.csproj" Id="59b0cc94-4d62-4c25-b941-00df1a31b80a" />
   </Folder>
