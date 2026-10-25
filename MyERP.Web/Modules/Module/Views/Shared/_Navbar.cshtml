@@ -10,7 +10,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav main-nav-links me-auto">
+            @* <ul class="navbar-nav main-nav-links me-auto">
                 <li class="nav-item">
                     <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Dashboard" ? "active" : "")" asp-controller="Dashboard" asp-action="Index">
                         <i class="fa-solid fa-gauge-high"></i> Dashboard
@@ -32,13 +32,63 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
                 </li>
-            </ul>
+            </ul> *@
 
             <!-- Search -->
             @* <form class="d-none d-lg-flex nav-search me-3" role="search">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input class="form-control" type="search" placeholder="Quick search... (Ctrl+K)" id="globalSearch" />
             </form> *@
+
+            @* <ul class="navbar-nav main-nav-links me-auto">
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Dashboard" ? "active" : "")" asp-controller="Dashboard" asp-action="Index">
+                        <i class="fa-solid fa-gauge-high"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Companies" ? "active" : "")" asp-controller="Companies" asp-action="Index">
+                        <i class="fa-solid fa-building"></i> Companies
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Branches" ? "active" : "")" asp-controller="Branches" asp-action="Index">
+                        <i class="fa-solid fa-code-branch"></i> Branches
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-chart-line"></i> Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+                </li>
+            </ul> *@
+
+            <ul class="navbar-nav main-nav-links me-auto">
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Modules" ? "active" : "")"
+                       asp-controller="Modules"
+                       asp-action="Index">
+                        <i class="fa-solid fa-cubes"></i> Modules
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "POS" ? "active" : "")"
+                       asp-controller="POS"
+                       asp-action="Index">
+                        <i class="fa-solid fa-cash-register"></i> POS
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "CRM" ? "active" : "")"
+                       asp-controller="CRM"
+                       asp-action="Index">
+                        <i class="fa-solid fa-users"></i> CRM
+                    </a>
+                </li>
+            </ul>
 
             <ul class="navbar-nav ms-lg-auto align-items-center flex-row gap-2">
                 <!-- Dark mode -->

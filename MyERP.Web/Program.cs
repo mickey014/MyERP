@@ -26,16 +26,7 @@ namespace MyERP.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            // ===========================================
-            // MVC + Razor
-            // ===========================================
-            builder.Services
-            .AddControllersWithViews()
-            .AddRazorOptions(options =>
-            {
-                // Register the custom module view resolver
-                options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
-            });
+            builder.Services.AddInfrastructure(builder.Configuration);
 
             var app = builder.Build();
 
