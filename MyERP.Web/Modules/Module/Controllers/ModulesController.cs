@@ -1,4 +1,4 @@
-﻿using MyERP.Data.Configuration;
+﻿using MyERP.Infrastructure.Configurations;
 using Microsoft.AspNetCore.Mvc;
 using MyERP.Web.Modules.Module.ViewModels;
 
