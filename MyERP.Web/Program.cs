@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MyERP.Data;
+using MyERP.Infrastructure.Persistence.Entities;
 using MyERP.Infrastructure.Razor;
 
 namespace MyERP.Web
