@@ -37,6 +37,12 @@
     --erp-radius: 14px;
     --erp-radius-sm: 8px;
 
+    /* Disabled features — light mode */
+    --erp-disabled: #9AA3AF;
+    --erp-disabled-bg: #EEF0F3;
+    --erp-disabled-border: #D8DDE5;
+    --erp-disabled-text: #7B8492;
+
 
     --brand-primary: #4361ee;
     --brand-primary-dark: #3049c9;
@@ -62,6 +68,14 @@
     --border-color: #262b38;
     --text-primary: #e7e9ee;
     --text-muted: #98a1b3;
+    
+    /* Disabled features */
+    --erp-muted-accent: #667085;
+    --erp-muted-tint: #252B38;
+    --erp-disabled: #667085;
+    --erp-disabled-bg: #252B38;
+    --erp-disabled-border: #343B4A;
+    --erp-disabled-text: #98A2B3;
 }
 
 @font-face {

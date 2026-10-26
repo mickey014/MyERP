@@ -77,6 +77,7 @@ public static class ModuleRegistry
                 Icon = "fa-solid fa-file-invoice-dollar",
                 Url = "/Accounting",
                 ButtonText = "Open Accounting",
+                Badge = "Coming Soon",
                 IsEnabled = false,
                 ColorTheme = "secondary"
             },
