@@ -1,0 +1,22 @@
+﻿@model MyERP.Web.Modules.POS.ViewModels.ModuleDashboardPageViewModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<div class="module-page-header">
+    <h1>@Model.PageTitle</h1>
+    <p>@Model.PageSubtitle</p>
+</div>
+
+<div class="row g-3 dashboard-stats">
+    @foreach (var stat in Model.Stats)
+    {
+        <div class="col-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card__icon"><i class="@stat.Icon" aria-hidden="true"></i></div>
+                <div class="stat-card__value">@stat.Value</div>
+                <div class="stat-card__label">@stat.Label</div>
+            </div>
+        </div>
+    }
+</div>
