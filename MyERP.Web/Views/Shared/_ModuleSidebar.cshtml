@@ -1,0 +1,33 @@
+@model MyERP.Web.ViewModels.ModuleSidebarViewModel
+
+<aside class="module-shell__sidebar">
+    <div class="module-shell__sidebar-header">
+        <span class="module-shell__sidebar-icon"><i class="@Model.ModuleIcon" aria-hidden="true"></i></span>
+        <span class="module-shell__sidebar-title">@Model.ModuleTitle</span>
+    </div>
+
+    @{
+        var currentPath = Context.Request.Path.Value ?? string.Empty;
+    }
+    <nav class="module-shell__nav">
+        @foreach(var item in Model.Items)
+        {
+            // The module root (/POS, /CRM) is the Dashboard link, so it
+            // needs an exact match — otherwise it would stay highlighted
+            // on every sub-page, since those paths also start with it.
+            var isModuleRoot = item.Url is "/POS" or "/CRM";
+            var isActive = isModuleRoot
+                ? currentPath.Equals(item.Url, StringComparison.OrdinalIgnoreCase)
+                : currentPath.StartsWith(item.Url, StringComparison.OrdinalIgnoreCase);
+
+            <a href="@item.Url" class="module-shell__nav-link@(isActive ? "is-active" : "")">
+
+            </a>
+        }
+    </nav>
+
+    <a href="/Modules" class="module-shell__back">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <span>All modules</span>
+    </a>
+</aside>
