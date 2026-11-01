@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="~/css/pos.css" asp-append-version="true" />
 }
 
-<div class="container-fluid px-4">
+<div class="container-fluid">
     <div class="module-shell module-shell--primary">
-        @* <partial name="_ModuleSidebar"/> *@
+        @await Component.InvokeAsync("POSSidebar")
         <div class="module-shell__content">
             @RenderBody()
         </div>

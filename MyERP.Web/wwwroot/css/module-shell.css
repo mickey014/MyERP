@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Module shell: the two-column sidebar + content frame used inside
+   POS and CRM (never on the centralized /Modules launcher — that
+   page stays sidebar-free by design). Each module sets --shell-accent
+   / --shell-accent-tint via .module-shell--primary / --success so
+   the same markup and CSS serve both modules.
+   ========================================================================== */
+
+.module-shell {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75rem;
+    max-width: 1180px;
+    margin: 2.75rem auto 2.75rem;
+}
+
+.module-shell--primary {
+    --shell-accent: var(--erp-pos);
+    --shell-accent-tint: var(--erp-pos-tint);
+}
+
+.module-shell--success {
+    --shell-accent: var(--erp-crm);
+    --shell-accent-tint: var(--erp-crm-tint);
+}
+
+/* ---- Sidebar ------------------------------------------------------------ */
+
+.module-shell__sidebar {
+    width: 230px;
+    flex-shrink: 0;
+    background: var(--erp-surface);
+    border: 1px solid var(--erp-border);
+    border-radius: var(--erp-radius);
+    padding: 1.25rem 1rem;
+    position: sticky;
+    top: 1.5rem;
+}
+
+.module-shell__sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid var(--erp-border);
+}
+
+.module-shell__sidebar-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--shell-accent-tint);
+    color: var(--shell-accent);
+    font-size: 0.95rem;
+}
+
+.module-shell__sidebar-title {
+    font-family: var(--erp-font-display);
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--erp-ink);
+}
+
+.module-shell__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.module-shell__nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: var(--erp-radius-sm);
+    color: var(--erp-text-muted);
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.module-shell__nav-link i {
+    width: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.module-shell__nav-link:hover {
+    background: var(--erp-bg);
+    color: var(--erp-text);
+}
+
+.module-shell__nav-link.is-active {
+    background: var(--shell-accent-tint);
+    color: var(--shell-accent);
+}
+
+.module-shell__back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--erp-border);
+    color: var(--erp-text-faint);
+    font-size: 0.84rem;
+    transition: color 0.15s ease;
+}
+
+.module-shell__back:hover {
+    color: var(--erp-text);
+}
+
+/* ---- Content column ------------------------------------------------------ */
+
+.module-shell__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.module-page-header {
+    margin-bottom: 1.5rem;
+}
+
+.module-page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.module-page-header p {
+    color: var(--erp-text-muted);
+    margin: 0;
+}
+
+/* ---- Dashboard stat cards ------------------------------------------------ */
+
+.dashboard-stats .stat-card {
+    background: var(--erp-surface);
+    border: 1px solid var(--erp-border);
+    border-radius: var(--erp-radius);
+    padding: 1.35rem;
+    height: 100%;
+}
+
+.stat-card__icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--shell-accent-tint, var(--erp-pos-tint));
+    color: var(--shell-accent, var(--erp-pos));
+    margin-bottom: 0.85rem;
+    font-size: 0.95rem;
+}
+
+.stat-card__value {
+    font-family: var(--erp-font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--erp-ink);
+    line-height: 1.2;
+}
+
+.stat-card__label {
+    color: var(--erp-text-muted);
+    font-size: 0.87rem;
+    margin-top: 0.2rem;
+}
+
+/* ---- Placeholder / "not built yet" state --------------------------------- */
+
+.module-placeholder {
+    background: var(--erp-surface);
+    border: 1px dashed var(--erp-border);
+    border-radius: var(--erp-radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--erp-text-muted);
+}
+
+.module-placeholder__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--shell-accent-tint, var(--erp-muted-tint));
+    color: var(--shell-accent, var(--erp-muted-accent));
+    font-size: 1.3rem;
+    margin: 0 auto 1rem;
+}
+
+.module-placeholder p {
+    max-width: 46ch;
+    margin: 0 auto;
+}
+
+/* ---- Responsive: stack sidebar above content on small screens ----------- */
+
+@media (max-width: 900px) {
+    .module-shell {
+        flex-direction: column;
+    }
+
+    .module-shell__sidebar {
+        width: 100%;
+        position: static;
+    }
+}

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyERP.Web.Modules.POS.ViewModels;
+using MyERP.Web.Modules.Module.ViewModels;
 
 namespace MyERP.Web.Modules.POS.Controllers
 {

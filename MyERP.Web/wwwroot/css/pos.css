@@ -1,0 +1,9 @@
+/* ==========================================================================
+   POS-only style overrides.
+
+   Everything the module shell needs today (sidebar, stat cards) is
+   already themed via the --shell-accent tokens in module-shell.css.
+   This file is reserved for styling specific to POS screens that
+   don't exist yet — the Terminal's product grid and cart, receipt
+   layout, barcode input, etc. — added as those pages are built.
+   ========================================================================== */

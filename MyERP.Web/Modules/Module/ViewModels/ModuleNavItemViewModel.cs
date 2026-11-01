@@ -1,4 +1,4 @@
-namespace MyERP.Web.ViewModels;
+namespace MyERP.Web.Modules.Module.ViewModels;
 
 public class ModuleNavItemViewModel
 {

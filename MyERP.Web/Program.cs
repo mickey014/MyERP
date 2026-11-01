@@ -26,7 +26,9 @@ namespace MyERP.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            builder.Services.AddInfrastructure(builder.Configuration);
+            builder.Services.AddPresentationLayer(builder.Configuration);
+            builder.Services.AddInfrastructureLayer(builder.Configuration);
+            builder.Services.AddApplicationLayer(builder.Configuration);
 
             var app = builder.Build();
 
