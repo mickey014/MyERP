@@ -1,0 +1,15 @@
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/crm.css" asp-append-version="true" />
+}
+
+<div class="container-fluid">
+    <div class="module-shell module-shell--primary">
+        @await Component.InvokeAsync("POSSidebar")
+        <div class="module-shell__content">
+            @RenderBody()
+        </div>
+    </div>
+</div>

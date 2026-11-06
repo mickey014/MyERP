@@ -1,0 +1,9 @@
+/* ==========================================================================
+   CRM-only style overrides.
+
+   Everything the module shell needs today (sidebar, stat cards) is
+   already themed via the --shell-accent tokens in module-shell.css.
+   This file is reserved for styling specific to CRM screens that
+   don't exist yet — the opportunity pipeline board, customer profile
+   tabs, activity timeline, etc. — added as those pages are built.
+   ========================================================================== */
