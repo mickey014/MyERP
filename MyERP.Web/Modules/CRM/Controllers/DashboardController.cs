@@ -2,9 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using MyERP.Web.Modules.Module.ViewModels;
 
 namespace MyERP.Web.Modules.CRM.Controllers;
-
 [Route("/CRM")]
-public class DashboardController : ControllerBase
+public class DashboardController : Controller
 {
     [HttpGet("")]
     public IActionResult Index()
