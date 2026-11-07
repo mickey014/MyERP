@@ -43,6 +43,11 @@
     --erp-disabled-border: #D8DDE5;
     --erp-disabled-text: #7B8492;
 
+    /* Muted backgrounds — light mode */
+    --erp-muted-bg: #EEF0F3;
+    --erp-muted-bg-hover: #E2E6EC;
+    --erp-muted-border: #D8DDE5;
+    --erp-muted-text: #7B8492;
 
     --brand-primary: #4361ee;
     --brand-primary-dark: #3049c9;
@@ -68,7 +73,13 @@
     --border-color: #262b38;
     --text-primary: #e7e9ee;
     --text-muted: #98a1b3;
-    
+
+    /* Muted backgrounds — dark mode */
+    --erp-muted-bg: #252B38;
+    --erp-muted-bg-hover: #30394A;
+    --erp-muted-border: #343B4A;
+    --erp-muted-text: #98A2B3;
+
     /* Disabled features */
     --erp-muted-accent: #667085;
     --erp-muted-tint: #252B38;
