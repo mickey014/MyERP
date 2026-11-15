@@ -483,3 +483,7 @@ $RECYCLE.BIN/
 
 # Removed Data layer
 /MyERP.Data/
+
+# AI documentation
+/ai/docs/*
+!/ai/docs/.gitkeep

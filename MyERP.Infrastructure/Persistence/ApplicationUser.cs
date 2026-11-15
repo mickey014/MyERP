@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace MyERP.Infrastructure.Persistence.Entities;
+namespace MyERP.Infrastructure.Persistence;
 
 public class ApplicationUser : IdentityUser
 {
