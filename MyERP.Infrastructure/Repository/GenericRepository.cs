@@ -33,11 +33,19 @@ namespace MyERP.Infrastructure.Repository
             return await applicationDbContext.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(object id)
+        {
+            var entity = await FindEntityAsync(id);
+
+            if (entity != null)
+            {
+                applicationDbContext.Set<TEntity>().Remove(entity);
+            }
+        }
+
         public async Task DetachAsync(object id)
         {
-            var entity = await applicationDbContext
-                .Set<TEntity>()
-                .FindAsync(id);
+            var entity = await FindEntityAsync(id);
 
             if (entity != null)
             {
@@ -57,9 +65,7 @@ namespace MyERP.Infrastructure.Repository
 
         public async Task<TDomain?> GetByIdAsync(object id)
         {
-            var entity = await applicationDbContext
-                .Set<TEntity>()
-                .FindAsync(id);
+            var entity = await FindEntityAsync(id);
 
             return entity == null
                 ? null
@@ -73,6 +79,13 @@ namespace MyERP.Infrastructure.Repository
             applicationDbContext.Set<TEntity>().Update(entity);
 
             await Task.CompletedTask;
+        }
+
+        private async Task<TEntity?> FindEntityAsync(object id)
+        {
+            return await applicationDbContext
+                .Set<TEntity>()
+                .FindAsync(id);
         }
     }
 }

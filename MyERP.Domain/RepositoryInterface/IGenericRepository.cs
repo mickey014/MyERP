@@ -8,5 +8,6 @@
         Task UpdateAsync(TDomain domain);
         Task<int> CommitAsync();
         Task DetachAsync(object id);
+        Task DeleteAsync(object id);
     }
 }
