@@ -1,5 +1,4 @@
-﻿
-namespace MyERP.Infrastructure.Persistence.Entities
+﻿namespace MyERP.Infrastructure.Persistence.Entities
 {
     /// <summary>Lookup table: New, Contacted, Qualified, Unqualified, Converted, Lost.</summary>
     public class LeadStatus

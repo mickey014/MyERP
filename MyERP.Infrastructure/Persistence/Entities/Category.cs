@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MyERP.Infrastructure.Persistence.Entities
+﻿namespace MyERP.Infrastructure.Persistence.Entities
 {
     public class Category
     {

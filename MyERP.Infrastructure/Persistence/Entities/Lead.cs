@@ -1,5 +1,4 @@
-﻿
-namespace MyERP.Infrastructure.Persistence.Entities
+﻿namespace MyERP.Infrastructure.Persistence.Entities
 {
     public class Lead
     {
