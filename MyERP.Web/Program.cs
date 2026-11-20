@@ -15,16 +15,6 @@ namespace MyERP.Web
 
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
-            builder.Services
-                .AddIdentity<ApplicationUser, IdentityRole>(options =>
-                {
-                    options.SignIn.RequireConfirmedAccount = false;
-                    options.Password.RequireNonAlphanumeric = false;
-                    options.Password.RequiredLength = 8;
-                })
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
             builder.Services.AddPresentationLayer(builder.Configuration);
             builder.Services.AddInfrastructureLayer(builder.Configuration);
             builder.Services.AddApplicationLayer(builder.Configuration);
