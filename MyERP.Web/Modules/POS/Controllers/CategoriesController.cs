@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyERP.Application.Contracts;
+using MyERP.Web.Modules.POS.ViewModels.Categories;
 
 namespace MyERP.Web.Modules.POS.Controllers
 {
@@ -19,9 +20,12 @@ namespace MyERP.Web.Modules.POS.Controllers
         {
             var categories = await categoryService.GetAllAsync(includeInactive: true);
 
-            return Json(categories);
+            var viewModel = new CategoryIndexViewModel
+            {
+                Categories = categories
+            };
 
-            return View(categories);
+            return View(viewModel);
         }
     }
 }

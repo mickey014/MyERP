@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MyERP.Application.Contracts;
 using MyERP.Application.DTOs.Response.Category;
+using MyERP.Application.Queries.Categories;
 using MyERP.Domain.RepositoryInterface;
 using System.Collections;
 
@@ -8,25 +9,22 @@ namespace MyERP.Application.Implementations
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoryRepository categoryRepository;
+        private readonly ICategoryQueryRepository categoryQueryRepository;
         private readonly IMapper mapper;
 
         public CategoryService(
-            ICategoryRepository categoryRepository,
+            ICategoryQueryRepository categoryQueryRepository,
             IMapper mapper
         )
         {
-           this.categoryRepository = categoryRepository;
+           this.categoryQueryRepository = categoryQueryRepository;
            this.mapper = mapper;
         }
         public async Task<IEnumerable<CategoryResponseDto>> GetAllAsync(
             bool includeInactive = false
         )
         {
-            var categories = await categoryRepository
-                .GetAllCategoryAsync(includeInactive);
-
-            return mapper.Map<IEnumerable<CategoryResponseDto>>(categories);
+            return await categoryQueryRepository.GetAllAsync(includeInactive);
         }
     }
 }

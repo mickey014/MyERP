@@ -20,6 +20,12 @@ namespace MyERP.Infrastructure.Mappings.POS
 
             // Domain -> Response DTO
             CreateMap<CategoryDomain, CategoryResponseDto>();
+
+            // EF Entity -> Response DTO
+            CreateMap<Category, CategoryResponseDto>()
+                .ForMember(
+                    dest => dest.ProductCount,
+                    opt => opt.MapFrom(src => src.Products.Count));
         }
     }
 }

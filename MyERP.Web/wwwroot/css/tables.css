@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Reusable data table + status pill + row-action styles for any
+   module's list screens (POS Products/Categories/Inventory today;
+   CRM's lists will reuse the same classes later).
+   ========================================================================== */
+
+.data-table-card {
+    border: 1px solid var(--erp-border);
+    border-radius: var(--erp-radius);
+    overflow-x: auto;
+}
+
+.data-table {
+    margin-bottom: 0;
+    min-width: 640px;
+}
+
+.data-table thead th {
+    background: var(--erp-bg);
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--erp-text-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--erp-border);
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+}
+
+    .data-table tbody td {
+        background: var(--erp-bg);
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--erp-border);
+        font-size: 0.92rem;
+        vertical-align: middle;
+    }
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background: var(--erp-bg);
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-pill--active { background: var(--erp-crm-tint); color: var(--erp-crm); }
+.status-pill--inactive { background: var(--erp-muted-tint); color: var(--erp-text-faint); }
+.status-pill--warning { background: #FFF4E5; color: #B5590A; }
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    color: var(--erp-text-muted);
+    border: 1px solid transparent;
+    background: transparent;
+    margin-left: 0.25rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.icon-btn:hover {
+    background: var(--erp-bg);
+    color: var(--erp-text);
+}
+
+.icon-btn--danger:hover {
+    background: #FBEAEA;
+    color: #B3261E;
+}
+
+.table-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.1rem;
+}
+
+.table-toolbar .form-control,
+.table-toolbar .form-select {
+    max-width: 240px;
+}

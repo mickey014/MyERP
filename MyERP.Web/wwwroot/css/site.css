@@ -12,6 +12,7 @@
    ========================================================================== */
 
 :root {
+    color-scheme: light;
     /* Ink / neutrals */
     --erp-ink: #101826;
     --erp-ink-soft: #1B2438;
@@ -36,19 +37,16 @@
     /* Shape */
     --erp-radius: 14px;
     --erp-radius-sm: 8px;
-
     /* Disabled features — light mode */
     --erp-disabled: #9AA3AF;
     --erp-disabled-bg: #EEF0F3;
     --erp-disabled-border: #D8DDE5;
     --erp-disabled-text: #7B8492;
-
     /* Muted backgrounds — light mode */
     --erp-muted-bg: #EEF0F3;
     --erp-muted-bg-hover: #E2E6EC;
     --erp-muted-border: #D8DDE5;
     --erp-muted-text: #7B8492;
-
     --brand-primary: #4361ee;
     --brand-primary-dark: #3049c9;
     --brand-secondary: #7209b7;
@@ -68,18 +66,26 @@
 }
 
 [data-bs-theme="dark"] {
+    color-scheme: dark;
+    /* Backgrounds */
+    --erp-bg: #11151D;
+    --erp-surface: #1B222D;
+    --erp-surface-alt: #151B25;
+    --erp-surface-hover: #252E3B;
+    /* Borders */
+    --erp-border: #303A49;
+    --erp-border-strong: #414D5E;
+
     --surface: #161a23;
     --surface-alt: #0f1219;
     --border-color: #262b38;
     --text-primary: #e7e9ee;
     --text-muted: #98a1b3;
-
     /* Muted backgrounds — dark mode */
     --erp-muted-bg: #252B38;
     --erp-muted-bg-hover: #30394A;
     --erp-muted-border: #343B4A;
     --erp-muted-text: #98A2B3;
-
     /* Disabled features */
     --erp-muted-accent: #667085;
     --erp-muted-tint: #252B38;
