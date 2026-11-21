@@ -1,21 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyERP.Web.Modules.Module.ViewModels;
+using MyERP.Application.Contracts;
 
 namespace MyERP.Web.Modules.POS.Controllers
 {
     [Route("/POS/Categories")]
     public class CategoriesController : Controller
     {
-        public IActionResult Index()
+        private readonly ICategoryService categoryService;
+        public CategoriesController(
+            ICategoryService categoryService
+        )
         {
-            var model = new ModulePlaceholderViewModel
-            {
-                PageTitle = "Categories",
-                Icon = "fa-solid fa-tags",
-                Message = "Product category management will be built in Step 11 alongside the Products module."
-            };
+            this.categoryService = categoryService;    
+        }
 
-            return View(model);
+        [HttpGet("")]
+        public async Task<IActionResult> Index()
+        {
+            var categories = await categoryService.GetAllAsync(includeInactive: true);
+
+            return Json(categories);
+
+            return View(categories);
         }
     }
 }

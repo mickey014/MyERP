@@ -43,12 +43,28 @@ namespace MyERP.Web
 
             services.AddAutoMapper(typeof(InfraAssemblyMarker).Assembly); // register automapper only on infrastructure layer
 
+            // Automatically register repositories
+            services.Scan(scan => scan
+            .FromAssemblyOf<InfraAssemblyMarker>()
+            .AddClasses(classes => classes
+                .Where(type => type.Name.EndsWith("Repository")))
+            .AsImplementedInterfaces()
+            .WithScopedLifetime());
+
             return services;
         }
 
         public static IServiceCollection AddApplicationLayer(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAutoMapper(typeof(ApplicationLayerMarker).Assembly); // register automapper only on application layer
+
+            // Automatically register Application services
+            services.Scan(scan => scan
+                .FromAssemblyOf<ApplicationLayerMarker>()
+                .AddClasses(classes => classes
+                    .Where(type => type.Name.EndsWith("Service")))
+                .AsImplementedInterfaces()
+                .WithScopedLifetime());
 
             return services;
         }
