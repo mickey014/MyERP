@@ -27,5 +27,11 @@ namespace MyERP.Web.Modules.POS.Controllers
 
             return View(viewModel);
         }
+
+        [HttpGet("Create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
